@@ -1,0 +1,69 @@
+.animaldetail {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.details {
+    width: 60%;
+    height: 350px;
+    padding: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    
+    
+}
+
+.leftcontainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__name {
+        font-size: 18px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    &__img {
+        width: 100%;
+        height: 200px;
+    }
+
+    &__feed {
+        font-size: 16px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    &__btn {
+        width: 50%;
+        padding: 8px 0;
+        background-color: #5c6f90;
+        color: white;
+        font-size: 14px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        cursor: pointer;
+    }
+}
+
+.rightcontainer {
+    width: 50%;
+
+    &__longdesc {
+        font-size: 14px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding-left: 20px;
+    }
+
+    &__medicine {
+        font-size: 12px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        padding: 20px 0 0 20px;
+    }
+}

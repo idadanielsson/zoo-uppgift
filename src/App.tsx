@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import './App.css';
-import { Animals } from './components/Animals/Animals';
+import { Nav } from './components/Nav/Nav';
+import { IAnimal } from './models/IAnimal';
+import { getAnimals, getAnimalsById } from './services/animalService';
+
 
 function App() {
   return (
-      <Animals></Animals>
+    <>
+      <header>
+        <Nav></Nav>
+      </header>
+      <main>
+        <Outlet/>
+      </main>
+    </>  
      
 
   );

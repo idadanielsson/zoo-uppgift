@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.topnav {
+    width: 100%;
+    height: 8vh;
+    margin-bottom: 40px;
+    background-color: #5c6f9026;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__list {
+        list-style-type: none;
+    }
+
+    &__item {
+        font-size: 36px;
+    }
+
+}
+
