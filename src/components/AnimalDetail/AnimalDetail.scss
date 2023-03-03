@@ -56,11 +56,15 @@
     &__btn {
         width: 50%;
         padding: 8px 0;
-        background-color: #5c6f90;
+        background-color: #404f68;
         color: white;
         font-size: 14px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         cursor: pointer;
+
+        &:hover {
+            color: rgb(184, 181, 181);
+        }
     }
 }
 

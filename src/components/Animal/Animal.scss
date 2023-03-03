@@ -28,12 +28,16 @@
         margin: 10px 10px 20px 10px;
         border-radius: 5px;
         border: none;
-        background-color: #5c6f90;
+        background-color: #404f68;
         color: white;
         font-size: 14px;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         cursor: pointer;
         box-shadow: 2px 2px 5px #8e8e8e;
+
+        &:hover {
+            color: rgb(184, 181, 181);
+        }
     }
 
     &__description {

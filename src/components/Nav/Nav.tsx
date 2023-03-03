@@ -10,7 +10,7 @@ export const Nav = () => {
                 <nav className='topnav'>
                     <ul className='topnav__list'>
                         <li className='topnav__item'>
-                            <Link to="/"><FaPaw></FaPaw></Link>
+                            <Link to="/" className='topnav__link'>Zoo</Link>
                         </li>
                     </ul>
                 </nav>
