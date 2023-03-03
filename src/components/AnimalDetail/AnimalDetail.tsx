@@ -11,26 +11,31 @@ export const AnimalDetail = () => {
     const {id} = useParams();
     const [animals, setAnimals] = useState<IAnimal[]>([]); 
     const [isFed, setIsFed] = useState(false);
-    const [buttondisabled, setButtondisabled] = useState(false);
     const [fedTime, setFedTime] = useState("");
     const [error, setError] = useState("");
 
 
     
     useEffect(() => {
+      
       const animalsFromLocalStorage = JSON.parse(localStorage.getItem("Animals") || "[]");
       setAnimals(animalsFromLocalStorage);
+
+  
     }, []);
     
       const pet = animals.find((animal) => animal.id === Number(id)) || null;
   
       if (!pet) {
-        return <div><p>Djuret kan ej hittas</p>
-        <button className="showAnimals" >Återgå till Alla djur</button></div>;
+        return (
+          <></>
+        )
       }
-  
+
+    
   
       const handleFeedClick = () => {
+  
         const timeElapsed = Date.now();
         const rightNow = new Date(timeElapsed);
         const rightNowAsString = rightNow.toISOString();
@@ -48,6 +53,7 @@ export const AnimalDetail = () => {
       
         localStorage.setItem("Animals", JSON.stringify(updatedTime));
         setAnimals(updatedTime);
+        setIsFed(true);
       };
    
     console.log(isFed);
