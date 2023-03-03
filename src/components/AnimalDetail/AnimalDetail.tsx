@@ -13,7 +13,6 @@ export const AnimalDetail = () => {
     const [isFed, setIsFed] = useState(false);
     const [buttondisabled, setButtondisabled] = useState(false);
     const [fedTime, setFedTime] = useState("");
-    const [timeToEat, setTimeToEat] = useState<Date>();
     const [error, setError] = useState("");
 
 
@@ -44,13 +43,11 @@ export const AnimalDetail = () => {
             };
             
           }
-          
           return animal;
         });
       
         localStorage.setItem("Animals", JSON.stringify(updatedTime));
         setAnimals(updatedTime);
-        setButtondisabled(true);
       };
    
     console.log(isFed);
@@ -72,7 +69,7 @@ export const AnimalDetail = () => {
                     <h4 className="leftcontainer__name">{pet.name}</h4>
                         <img className="leftcontainer__img" src={pet.imageUrl} alt={pet.name} />
                         <p className="leftcontainer__feed">Matad: {fedTime} {pet.lastFed}</p>
-                        <button className='leftcontainer__btn' disabled={buttondisabled} onClick={handleFeedClick}>Mata {pet.name}</button>
+                        <button className='leftcontainer__btn' disabled={pet.isFed} onClick={handleFeedClick}>Mata {pet.name}</button>
                     </div>
                     <div className="rightcontainer">
                         <p className="rightcontainer__longdesc">{pet.longDescription}</p>

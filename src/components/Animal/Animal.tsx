@@ -20,6 +20,8 @@ export const Animal = (props: IAnimalProps) => {
                 <div className="imgcontainer">
                     <img className="imgcontainer__img" src={props.animal.imageUrl} alt={props.animal.name} />
                 </div>
+                
+                <p className="animal__foodTime">{props.animal.isFed ? <span>Mätt</span> : <span className="isHungry">Hungrig</span>}</p>
                 <p className="animal__description">{props.animal.shortDescription}</p>
                 <button className="animal__btn" onClick={handleClick}>Läs mer</button>
             </div>
