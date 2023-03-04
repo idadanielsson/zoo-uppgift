@@ -6,7 +6,6 @@ import '../Animals/Animals.scss';
 
 export const Animals = () => {
     const [animals, setAnimals] = useState<IAnimalSmall[]>([]);
-    
 
     useEffect(() => {
 
