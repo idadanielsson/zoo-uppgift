@@ -53,5 +53,4 @@ export const Animal = (props: IAnimalProps) => {
             </div>
         </>
     );
-
 };

@@ -4,7 +4,6 @@ import { getAnimals} from "../../services/animalService";
 import '../AnimalDetail/AnimalDetail.scss';
 import { IAnimal } from "../../models/IAnimal";
 
-
 export const AnimalDetail = () => {
     const {id} = useParams();
     const [animals, setAnimals] = useState<IAnimal[]>([]); 
@@ -61,14 +60,14 @@ export const AnimalDetail = () => {
       const handleFeedClick = () => {
   
         const timeElapsed = Date.now();
-        const rightNow = new Date(timeElapsed);
-        const rightNowAsString = rightNow.toISOString();
+        const currentDate = new Date(timeElapsed);
+        const currentDateAsString = currentDate.toISOString();
         const updatedList = animals.map((animal) => {
           if (animal.id === item?.id) {
             return {
               ...animal,
               isFed: true,
-              lastFed: rightNowAsString,
+              lastFed: currentDateAsString,
             };
             
           }
@@ -78,11 +77,9 @@ export const AnimalDetail = () => {
         localStorage.setItem("Animals", JSON.stringify(updatedList));
         setAnimals(updatedList);
         setButtondisabled(true);
-        setFedTime(rightNowAsString);
+        setFedTime(currentDateAsString);
       };
    
- 
-
         return (
             <>
                 <section className="animaldetail">
@@ -90,8 +87,8 @@ export const AnimalDetail = () => {
                     <div className="leftcontainer">
                     <h4 className="leftcontainer__name">{item?.name}</h4>
                         <img className="leftcontainer__img" src={item?.imageUrl} alt={item?.name} />
-                        <p className="leftcontainer__feed">Matad: {fedTime} {item?.lastFed}</p>
-                        <button className='leftcontainer__btn' disabled={item?.isFed} onClick={() => {handleFeedClick()}}>Mata {item?.name}</button> 
+                        <p className="leftcontainer__feed">Matad: {fedTime}</p>
+                        <button className='leftcontainer__btn' disabled={buttondisabled} onClick={() => {handleFeedClick()}}>Mata {item?.name}</button> 
                     </div>
                     <div className="rightcontainer">
                         <p className="rightcontainer__longdesc">{item?.longDescription}</p>
